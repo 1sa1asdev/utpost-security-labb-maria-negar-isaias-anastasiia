@@ -1,4 +1,4 @@
-# Utpost – CI (M1, utbyggd i M4, M5, M6, M7)
+# Utpost – CI (M1, utbyggd i M4, M5, M6, M7, M8)
 # Varje PR mot main och varje push till main: lint, formatkontroll, typkontroll, tester och bygge.
 # Rött någonstans = PR:en får inte mergas (branch protection kräver "Kvalitet", "Bygg", "Integration" och "Image").
 # M4: jobbet Image bygger Docker-imagerna. På PR byggs de bara (går Dockerfilen igenom?),
