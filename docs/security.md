@@ -15,8 +15,8 @@
 
 | # | Risk | Gäller oss? | Vad vi hittade (fil, endpoint) | Vad vi gjorde (PR) | Kontroll (testet som var rött före fixen, eller curl) |
 |---|---|---|---|---|---|
-| A01 | Broken Access Control | | | | |
-| A02 | Security Misconfiguration | | | | |
+| A01 | Broken Access Control | https://github.com/AnastasiaSkachenko/utpost-security-labb-maria-negar-isaias-anastasiia/actions/runs/43398698126/job/131795846067?pr=1| | | |
+| A02 | Security Misconfiguration | https://github.com/AnastasiaSkachenko/utpost-security-labb-maria-negar-isaias-anastasiia/actions/runs/43398698126/job/131795846067?pr=1 | | | |
 | A03 | Software Supply Chain Failures | | | | |
 | A04 | Cryptographic Failures | | | | |
 | A05 | Injection | | | | |
