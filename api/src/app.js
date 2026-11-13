@@ -1,5 +1,4 @@
 import express from 'express';
-import cors from 'cors';
 import { ZodError } from 'zod';
 import { config } from './config.js';
 import { pool } from './db/client.js';
@@ -15,7 +14,9 @@ import { yoga } from './graphql/server.js';
 // på en fast port – routes.test.js startar den på en ledig port, anropar den och stänger den.
 export const app = express();
 
-app.use(cors());
+// M8 (A02): ingen CORS. Browsern når API:et genom nginx (containern) eller Vites proxy (utveckling),
+// alltså från samma origin – så ingen annan sajt behöver, eller får, läsa våra svar. app.use(cors())
+// utan argument betydde "Access-Control-Allow-Origin: *": vilken sida som helst fick läsa svaren.
 
 // GraphQL (M4): en endpoint bredvid REST-routerna. Ligger före express.json() – yoga läser sin egen body.
 app.use(yoga.graphqlEndpoint, yoga);
