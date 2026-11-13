@@ -93,6 +93,7 @@ Skuld 9 var *öppna endpoints, ingen validering av indata, strängkonkatenerade 
 - **Klienten:** token i minnet (`client/src/lib/token.ts`), Pinia-storen `auth` (`client/src/stores/auth.ts`), `LoginView` på `/logga-in`. En omladdning loggar ut – refresh-token är inte byggt (känd brist, `docs/security.md`).
 
 Checklistan: `docs/security.md`.
+**Säkerhetsskanning i pipelinen (fredagens labb, M8):** jobbet *Säkerhet* i `ci.yml` kör på varje PR: `npm audit` (beroenden med kända sårbarheter), Trivy mot repot (beroenden, hemligheter, Dockerfiles) och mot api-imagen, och ZAP baseline mot den körande appen (saknade säkerhetsheaders, läckt serverinfo). `security-headers.conf` sätter CSP och de andra headrarna i varje nginx-location; `.trivyignore` och `.zap/rules.tsv` säger vad som är ett stopp och vad som är ett medvetet undantag. API:et har ingen CORS längre – browsern når det genom nginx eller Vites proxy, från samma origin.
 
 ## I molnet (M6)
 
